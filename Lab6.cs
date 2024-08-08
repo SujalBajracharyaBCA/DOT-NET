@@ -78,11 +78,19 @@ namespace Lab6
                 new Circle(7)
             };
 
-            // Calculating and displaying the area of each shape
-            foreach (Shape shape in shapes)
+               // Array to store the area of each shape
+            double[] areas = new double[shapes.Length];
+
+            // Calculate the area for each shape and store it in the areas array
+            for (int i = 0; i < shapes.Length; i++)
             {
-                Console.WriteLine($"The area of the {shape.GetType().Name} is: {shape.CalculateSurface()}");
+                areas[i] = shapes[i].CalculateSurface();
             }
-        }
+
+            // Display the areas
+            for (int i = 0; i < areas.Length; i++)
+            {
+                Console.WriteLine($"The area of the {shapes[i].GetType().Name} is: {areas[i]}");
+            }
     }
 }
